@@ -2,6 +2,7 @@ require 'sinatra/base'
 require 'sinatra/reloader'
 
 require_relative './lib/player.rb'
+require_relative './lib/game.rb'
 
 
 class Battle < Sinatra::Base
@@ -29,7 +30,7 @@ class Battle < Sinatra::Base
   end
 
   post '/attack' do
-    $player2.hp -= 10
+    Game.new.attack($player2)
     redirect '/play'
   end
 

@@ -10,8 +10,10 @@ RSpec.describe Player do
     expect(subject.hp).to eq(100)
   end
 
-  it 'can change the HP' do
-    subject.hp -= 10
-    expect(subject.hp).to eq(90)
+  describe '#reduce_hp_by_10' do
+    it 'reduces hp by 10' do
+      subject.reduce_hp_by_10
+      expect(subject.hp).to eq(90)
+    end
   end
 end
