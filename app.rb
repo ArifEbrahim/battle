@@ -25,6 +25,14 @@ class Battle < Sinatra::Base
     erb(:play)
   end
 
+  post '/attack' do
+    redirect '/confirmation'
+  end
+
+  get '/confirmation' do
+    erb(:confirmation)
+  end
+
   # start the server if ruby file executed directly
   run! if app_file == $0
 end
