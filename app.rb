@@ -8,7 +8,13 @@ class Battle < Sinatra::Base
   end
 
   get '/' do
-    'Testing infrastructure working!'
+    erb(:index)
+  end
+
+  post '/names' do
+    @player_1_name=params[:'Player 1 Name']
+    @player_2_name=params[:'Player 2 Name']
+    erb(:play)
   end
 
   # start the server if ruby file executed directly
